@@ -1,0 +1,14 @@
+.container{
+  margin-top: 5em;
+}
+
+.headerText > h4{
+  font-weight: 700;
+}
+
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}

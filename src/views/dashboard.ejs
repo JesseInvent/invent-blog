@@ -1,0 +1,50 @@
+
+<div class="container">
+
+  <h1 class="mt-4">Dashboard</h1>
+  <p class="lead mb-3">Welcome <%= name.toUpperCase() %></p>
+
+  <div class="">
+
+    <div class="row">
+      <div class="col-sm-7">
+        <h4>Blogs</h4>
+      </div>
+      <div class="col-sm-5">
+        <a href="/blogs/add" class="btn btn-outline"><i class="fa fa-plus"></i>Add Blog</a>
+      </div>
+    </div>
+
+    <div class="blogs">
+      
+      <hr>
+
+          <% blogs.forEach(blog => { %>
+
+            <div class="blog jumbotron" data-id="<%= blog._id %>">
+
+                <h3><%= blog.title %></h3>
+                <i><%= blog.createdAt %></i>
+                <p><%= blog.body %></p>
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary read" data-state="hide" name="button">Read More <i class="fa fa-arrow-down"></i></button>
+                </div>
+
+                <div class="">
+                  <a href="" id="delete" class="btn btn-outline" data-id="<%= blog._id %>">Delete <i class="fa fa-trash"></i></a>
+                  <a href="/blogs/edit/<%= blog._id %>" class="btn btn-outline">Edit <i class="fa fa-edit"></i></a>
+                </div>
+
+            </div>
+
+          <% }) %>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/js/readMore.js" charset="utf-8"></script>
+<script src="/js/deleteBlog.js" charset="utf-8"></script>
